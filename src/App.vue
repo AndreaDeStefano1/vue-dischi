@@ -5,8 +5,8 @@
     @searchForAuthor='selectedAuthorValue'/>
 
     <MainComp 
-    :discsGenre="valueToPass"
-    :discsAuthor="valueToPass"
+    :discsGenre="valueGenreToPass"
+    :discsAuthor="valueAuthorToPass"
     />
   </div>
 </template>
@@ -27,18 +27,20 @@ export default {
   methods:{
     selectedGenreValue(value){
       console.log(value);
-      this.valueToPass = value
+      this.valueGenreToPass = value
     },
   
     selectedAuthorValue(value){
       console.log(value);
-      this.valueToPass = value
+      this.valueAuthorToPass = value
     }
   },
   data(){
     return {
 
-      valueToPass: 'All'
+      valueGenreToPass: 'All',
+      valueAuthorToPass: 'All'
+
     }
   }
 }
