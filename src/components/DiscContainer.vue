@@ -4,7 +4,7 @@
 
     <div v-if="isLoaded" class="container disc-container d-flex flex-wrap justify-content-between">
       <DiscCard 
-      v-for="(disc,index) in discArray" :key="`disc-${index}`"
+      v-for="(disc,index) in discsArrayComputed" :key="`disc-${index}`"
       :discItem="disc"/>
 
     </div>
@@ -30,6 +30,12 @@ export default {
         isLoaded: false,
       }
     },
+    computed: {
+      discsArrayComputed(){
+        return this.discArray.filter( disc => (disc.genre == this.recivedGenre || this.recivedGenre == 'All') && (disc.author == this.recivedAuthor || this.recivedAuthor == 'All'))
+        // 
+      }
+    },
     components: { 
       DiscCard,
       LoaderComp
@@ -46,6 +52,10 @@ export default {
           this.isLoaded = true;
         })
       }
+    },
+    props:{      
+      recivedAuthor: String,
+      recivedGenre: String,
     }
 }
 </script>

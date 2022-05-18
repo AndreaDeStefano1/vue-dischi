@@ -1,7 +1,10 @@
 <template>
   <main class="py-5">
 
-    <DiscContainer/>
+    <DiscContainer 
+    :recivedGenre="discsGenre"
+    :recivedAuthor="discsAuthor"    
+    />
 
   </main>
 </template>
@@ -13,7 +16,11 @@ export default {
   name: 'MainComp',
   components:{
     DiscContainer,
-  }
+  },
+  props: {
+    discsGenre: String,
+    discsAuthor: String
+  },
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
-  <option :value="discItem">
-    {{discItem}}
+  <option :value="value">
+    {{value}}
   </option>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'OptionComp',
   props:{
-    discItem: String,
+    value: String,
   }
 }
 </script>

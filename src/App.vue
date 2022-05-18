@@ -1,7 +1,13 @@
 <template>
   <div>
-    <HeaderComp/>
-    <MainComp/>
+    <HeaderComp 
+    @searchForGenre='selectedGenreValue'
+    @searchForAuthor='selectedAuthorValue'/>
+
+    <MainComp 
+    :discsGenre="valueToPass"
+    :discsAuthor="valueToPass"
+    />
   </div>
 </template>
 
@@ -17,6 +23,23 @@ export default {
     MainComp,
     HeaderComp
     
+  },
+  methods:{
+    selectedGenreValue(value){
+      console.log(value);
+      this.valueToPass = value
+    },
+  
+    selectedAuthorValue(value){
+      console.log(value);
+      this.valueToPass = value
+    }
+  },
+  data(){
+    return {
+
+      valueToPass: 'All'
+    }
   }
 }
 </script>
