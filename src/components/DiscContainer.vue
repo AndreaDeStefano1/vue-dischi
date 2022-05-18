@@ -42,7 +42,6 @@ export default {
       getAPI (){
         axios.get(this.apiUrl)
         .then(r => {
-          console.log(r.data.response)
           this.discArray = r.data.response;
           this.isLoaded = true;
         })

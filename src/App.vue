@@ -17,7 +17,7 @@ export default {
     MainComp,
     HeaderComp
     
-}
+  }
 }
 </script>
 
